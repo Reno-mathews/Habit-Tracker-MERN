@@ -16,6 +16,6 @@ const habitSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        Default: Date.now
+        default: Date.now
     }
 })
