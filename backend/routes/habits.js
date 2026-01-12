@@ -20,6 +20,6 @@ router.post("/", async (req,res) => {
             title: req.body.title,
         });
 
-        const savedHabit = await 
+        const savedHabit = await
     }
 })
