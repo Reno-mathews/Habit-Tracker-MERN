@@ -10,7 +10,7 @@ function App() {
     }, []);
 
     const fetchHabits = async () => {
-        const res = await fetch("http://localhost:5000/api/habits")
+        const res = await fetch("http://habit-tracker-mern-bhnc.onrender.com/api/habits")
         const data = await res.json();
         setHabits(data);
     };
