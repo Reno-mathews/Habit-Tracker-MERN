@@ -30,7 +30,7 @@ function App() {
 
     const deleteHabit = async (id) => {
         try {
-            await fetch(`http://localhost:5000/api/habits/${id}`, {
+            await fetch(`http://habit-tracker-mern-bhnc.onrender.com/api/habits/${id}`, {
                 method: "DELETE",
             });
 
@@ -42,7 +42,7 @@ function App() {
 
     const markHabitDone = async (id) => {
         try {
-            const res = await fetch(`http://localhost:5000/api/habits/${id}/done`, {
+            const res = await fetch(`http://habit-tracker-mern-bhnc.onrender.com/api/habits/${id}/done`, {
                 method: "PATCH",
             });
 
