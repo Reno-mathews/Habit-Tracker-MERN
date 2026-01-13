@@ -10,13 +10,13 @@ function App() {
     }, []);
 
     const fetchHabits = async () => {
-        const res = await fetch("http://habit-tracker-mern-bhnc.onrender.com/api/habits")
+        const res = await fetch("https://habit-tracker-mern-bhnc.onrender.com/api/habits")
         const data = await res.json();
         setHabits(data);
     };
 
     const addHabit = async (title) => {
-        const res = await fetch("http://habit-tracker-mern-bhnc.onrender.com/api/habits", {
+        const res = await fetch("https://habit-tracker-mern-bhnc.onrender.com/api/habits", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -30,7 +30,7 @@ function App() {
 
     const deleteHabit = async (id) => {
         try {
-            await fetch(`http://habit-tracker-mern-bhnc.onrender.com/api/habits/${id}`, {
+            await fetch(`https://habit-tracker-mern-bhnc.onrender.com/api/habits/${id}`, {
                 method: "DELETE",
             });
 
@@ -42,7 +42,7 @@ function App() {
 
     const markHabitDone = async (id) => {
         try {
-            const res = await fetch(`http://habit-tracker-mern-bhnc.onrender.com/api/habits/${id}/done`, {
+            const res = await fetch(`https://habit-tracker-mern-bhnc.onrender.com/api/habits/${id}/done`, {
                 method: "PATCH",
             });
 
