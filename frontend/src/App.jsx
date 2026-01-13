@@ -16,7 +16,7 @@ function App() {
     };
 
     const addHabit = async (title) => {
-        const res = await fetch("http://localhost:5000/api/habits", {
+        const res = await fetch("http://habit-tracker-mern-bhnc.onrender.com/api/habits", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
