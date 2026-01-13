@@ -19,3 +19,5 @@ const habitSchema = new mongoose.Schema({
         default: Date.now
     }
 })
+
+module.exports = mongoose.model("Habit", habitSchema);
