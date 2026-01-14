@@ -18,10 +18,6 @@ const habitSchema = new mongoose.Schema({
         type: Date,
         default: null,
     },
-    completedDates: {
-        type: Date,
-        default: [],
-    },
     createdAt: {
         type: Date,
         default: Date.now

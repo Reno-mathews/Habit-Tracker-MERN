@@ -80,6 +80,8 @@ router.patch("/:id/done", async (req,res) => {
     //Update last completed
     habit.lastCompleted = today;
     
+    habit.lastCompleted = today;
+    habit.completedDates.push(today);
     const updatedHabit = await habit.save();
 
     res.json(updatedHabit);

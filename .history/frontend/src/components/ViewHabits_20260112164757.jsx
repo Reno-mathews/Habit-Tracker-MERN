@@ -16,9 +16,6 @@ function ViewHabits({ habits, deleteHabit, markHabitDone }) {
                     <div>
                     <p className="text-gray-800 font-medium">{habit.title}</p>
                     <p className="text-sm text-gray-500">- 🔥 Streak: {habit.streak}</p>
-                    <p className="text-sm text-gray-500">
-                        🔥 Streak: {habit.streak} | 🏆 Best: {habit.bestStreak}
-                    </p>
                     </div>
 
                     <div className="flex items-center gap-2">

@@ -10,17 +10,9 @@ const habitSchema = new mongoose.Schema({
         required: true,
         default: 0,
     },
-    bestStreak: {
-        type: Number,
-        default: 0,
-    },
     lastCompleted: {
         type: Date,
         default: null,
-    },
-    completedDates: {
-        type: Date,
-        default: [],
     },
     createdAt: {
         type: Date,

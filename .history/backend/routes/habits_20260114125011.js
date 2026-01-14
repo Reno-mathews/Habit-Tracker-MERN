@@ -76,10 +76,9 @@ router.patch("/:id/done", async (req,res) => {
 
     // Add to completion history
     habit.completedDates.push(today);
-
-    //Update last completed
-    habit.lastCompleted = today;
     
+    habit.lastCompleted = today;
+    habit.completedDates.push(today);
     const updatedHabit = await habit.save();
 
     res.json(updatedHabit);

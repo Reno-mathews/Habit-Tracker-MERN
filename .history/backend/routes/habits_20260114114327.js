@@ -1,12 +1,5 @@
 const express = require("express");
 const Habits = require("../models/Habits");
-const isSameDay = (d1,d2) => {
-    return (
-        d1.getFullYear() === d2.getFullYear() &&
-        d1.getMonth() === d2.getMonth() &&
-        d1.getDate() === d2.getDate()
-    );
-};
 
 const router = express.Router();
 
@@ -61,25 +54,17 @@ router.patch("/:id/done", async (req,res) => {
                 return res.json(habit);
             } else if (diffDays === 1) {
                 habit.streak += 1;
+                if (habit.streak > habit.bestStreak) {
+                    habit.bestStreak = habit.streak;
+                }
             } else {
                 habit.streak = 1;
             }
         } else {
             habit.streak = 1;
         }
-
-    // Best streak logic
-
-    if (habit.streak > habit.bestStreak) {
-        habit.bestStreak = habit.streak;
-    }
-
-    // Add to completion history
-    habit.completedDates.push(today);
-
-    //Update last completed
-    habit.lastCompleted = today;
     
+    habit.lastCompleted = today;
     const updatedHabit = await habit.save();
 
     res.json(updatedHabit);
